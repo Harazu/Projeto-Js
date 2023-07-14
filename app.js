@@ -1,13 +1,4 @@
-// Função para lidar com o envio do formulário de criação de partida
-function handleCriarPartida(event) {
-    event.preventDefault();
-  
-    const titulo = document.getElementById('titulo').value;
-    const local = document.getElementById('local').value;
-    const data = document.getElementById('data').value;
-    const horario = document.getElementById('horario').value;
-  
-    // Função para lidar com o envio do formulário de criação de partida
+
 function handleCriarPartida(event) {
   event.preventDefault();
 
@@ -38,7 +29,7 @@ function handleCriarPartida(event) {
       console.error('Erro ao criar partida:', error);
     });
 }
-}
+
 
   
   // Função para carregar as partidas do servidor e exibir na tela
