@@ -2,30 +2,17 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Middleware para processar o corpo das requisições como JSON
-app.use(express.json());
-
-
-const { lerDadosArquivo, gravarDadosArquivo } = require('./fileUtils.js');
-
-// Exemplo de uso
-const caminhoArquivo = 'dados.json';
-
-// Ler os dados do arquivo
-const dadosLidos = lerDadosArquivo(caminhoArquivo);
-console.log('Dados lidos:', dadosLidos);
-
-// Modificar os dados
-const novosDados = { nome: 'Exemplo', idade: 25 };
-
-// Gravar os dados no arquivo
-gravarDadosArquivo(caminhoArquivo, novosDados);
-
 // Array para armazenar as partidas (simulação de banco de dados)
 let partidas = [];
 
+app.use(express.json());
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+
+
 // Rota para criar uma nova partida
 app.post('/partidas', (req, res) => {
+  console.log(req.body)
   const { titulo, local, data, horario } = req.body;
   const novaPartida = { titulo, local, data, horario, jogadores: [] };
   partidas.push(novaPartida);
@@ -75,6 +62,12 @@ app.post('/partidas/:id/presenca', (req, res) => {
   partida.jogadores.push({ jogador, telefone });
   res.json({ mensagem: 'Presença confirmada.' });
 });
+
+// Rota raiz
+//app.get('/', (req, res) => {
+//  res.send('Bem-vindo à aplicação de organização de partidas de futebol!');
+//});
+
 
 // Iniciar o servidor
 app.listen(port, () => {

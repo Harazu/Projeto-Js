@@ -8,28 +8,33 @@
 <body>
   <h1>Organizador de Partidas de Futebol</h1>
 
-  <form id="criarPartidaForm">
+  <form id="criarPartidaForm" action="/partidas" method="post">
     <h2>Criar Partida</h2>
     <div>
       <label for="titulo">Título:</label>
-      <input type="text" id="titulo" required>
+      <input type="text" id="titulo" required name="titulo">
     </div>
     <div>
       <label for="local">Local:</label>
-      <input type="text" id="local" required>
+      <input type="text" id="local" required name="local">
     </div>
     <div>
       <label for="data">Data:</label>
-      <input type="date" id="data" required>
+      <input type="date" id="data" required name="data">
     </div>
     <div>
       <label for="horario">Horário:</label>
-      <input type="time" id="horario" required>
+      <input type="time" id="horario" required name="horario">
     </div>
     <button type="submit">Criar Partida</button>
   </form>
 
-  <div id="partidasList"></div>
+  <h2>Partidas</h2>
+  <ul id="partidasList"></ul>
+
+  <h2>Lista de Jogadores</h2>
+<div id="listaJogadores"></div>
+
 
   <script src="app.js"></script>
 </body>
