@@ -1,17 +1,19 @@
 {
-  "name": "projeto-js",
+  "name": "aula-express-20231",
   "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "description": "Esse repositório contem o exemplo feito em sala de aula no dia 02/06. Para executar, é necessário ter o [NodeJS instalado em sua máquina](https://nodejs.org/en). Ao clonar o repositório, é necessário executar o comando `npm install` para baixar as dependências necessárias para o projeto.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Diogo Moreira",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^2.0.22"
   }
 }

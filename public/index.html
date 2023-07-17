@@ -1,41 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Organizador de Partidas de Futebol</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>Organizador de Partidas de Futebol</h1>
-
-  <form id="criarPartidaForm" action="/partidas" method="post">
-    <h2>Criar Partida</h2>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partidas</title>
+  </head>
+  <body>
+    <h1>Partidas</h1>
     <div>
-      <label for="titulo">Título:</label>
-      <input type="text" id="titulo" required name="titulo">
+      <ul id="partidas"></ul>
     </div>
-    <div>
-      <label for="local">Local:</label>
-      <input type="text" id="local" required name="local">
-    </div>
-    <div>
-      <label for="data">Data:</label>
-      <input type="date" id="data" required name="data">
-    </div>
-    <div>
-      <label for="horario">Horário:</label>
-      <input type="time" id="horario" required name="horario">
-    </div>
-    <button type="submit">Criar Partida</button>
-  </form>
-
-  <h2>Partidas</h2>
-  <ul id="partidasList"></ul>
-
-  <h2>Lista de Jogadores</h2>
-<div id="listaJogadores"></div>
-
-
-  <script src="app.js"></script>
-</body>
+    <div><a href="cadastrar.html">Cadastrar uma nova partida</a></div>
+    <script src="index.js"></script>
+  </body>
 </html>
